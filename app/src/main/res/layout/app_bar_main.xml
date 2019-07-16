@@ -34,4 +34,12 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_white" />
 
+   <com.airbnb.lottie.LottieAnimationView
+       app:lottie_rawRes="@raw/plus"
+       app:lottie_autoPlay="true"
+       app:lottie_loop="true"
+       android:layout_gravity="bottom|start"
+       android:id="@+id/lav_actionBar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
 </android.support.design.widget.CoordinatorLayout>

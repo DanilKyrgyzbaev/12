@@ -9,20 +9,18 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -43,6 +41,13 @@ public class MainActivity extends AppCompatActivity
 
         if(!isShown){
             startActivity(new Intent(this,OnBoardActivity.class));
+            finish();
+        }
+
+        boolean isRegistred= preferences.getBoolean("isRegistred", false);
+
+        if(!isRegistred){
+            startActivity(new Intent(this,LoginActivity.class));
             finish();
         }
 
